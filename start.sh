@@ -9,4 +9,4 @@ cd nodejs-hostname
 
 npm install
 
-node .
+nodejs .
