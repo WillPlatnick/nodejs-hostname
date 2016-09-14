@@ -1,13 +1,14 @@
-FROM ubuntu
+FROM alpine
 
-# make sure apt is up to date
-RUN apt-get update
+RUN apk --update add nodejs
 
-# install nodejs and npm
-RUN apt-get install -y nodejs npm git git-core
+WORKDIR /app
 
-ADD start.sh /tmp/
+COPY index.js /app
+COPY package.json /app
 
-RUN chmod +x /tmp/start.sh
+RUN npm install
 
-CMD ./tmp/start.sh
+CMD node .
+
+EXPOSE 8080

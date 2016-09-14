@@ -7,4 +7,5 @@ app.get('/', function(req, res){
     res.send("Running inside container " + hostname)
 });
 
-app.listen(80);
+console.log('Starting on port 8080')
+app.listen(8080);
